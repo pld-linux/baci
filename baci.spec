@@ -6,6 +6,7 @@ Release:	2
 License:	freeware
 Group:		Development/Languages
 Source0:	http://www.mines.edu/fs_home/tcamp/baci/%{name}src.tar.gz
+# Source0-md5:	c1b4f0f555cf0aa8da3bed614b1aa8e3
 BuildRequires:	flex
 BuildRequires:	tk-devel
 URL:		http://www.mines.edu/fs_home/tcamp/baci/
