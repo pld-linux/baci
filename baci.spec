@@ -8,6 +8,7 @@ Group:		Development/Languages
 Source0:	http://www.mines.edu/fs_home/tcamp/baci/%{name}src.tar.gz
 # Source0-md5:	c1b4f0f555cf0aa8da3bed614b1aa8e3
 Patch0:		%{name}-bapascal.patch
+Patch1:		%{name}-amd64.patch
 BuildRequires:	flex
 BuildRequires:	tk-devel
 URL:		http://www.mines.edu/fs_home/tcamp/baci/
@@ -22,6 +23,9 @@ Kompilator i interpreter jêzyka BACI.
 %prep
 %setup -q -n %{name}src
 %patch0
+%ifarch amd64
+%patch1 -p1
+%endif
 
 %build
 for i in lib pascomp disasm ccomp; do
