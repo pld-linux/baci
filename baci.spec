@@ -3,7 +3,7 @@ Summary(pl):	Wspó³bie¿ny interpreter BACI
 Name:		baci
 Version:	1.0
 Release:	7
-License:	freeware
+License:	Freeware
 Group:		Development/Languages
 Source0:	http://www.mines.edu/fs_home/tcamp/baci/%{name}src.tar.gz
 # Source0-md5:	14e0500bf7079a17664469ecead8bb4f
