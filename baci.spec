@@ -7,7 +7,6 @@ License:	Freeware
 Group:		Development/Languages
 Source0:	http://www.mines.edu/fs_home/tcamp/baci/%{name}src.tar.gz
 # Source0-md5:	14e0500bf7079a17664469ecead8bb4f
-# Source0-size:	270644
 Patch0:		%{name}-amd64.patch
 BuildRequires:	bison
 BuildRequires:	flex
