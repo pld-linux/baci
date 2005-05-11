@@ -22,13 +22,14 @@ Kompilator i interpreter jêzyka BACI.
 
 %prep
 %setup -q -n %{name}src
-%ifarch amd64
+%if "%{_lib}" == "lib64"
 %patch0 -p1
 %endif
 
 %build
 for i in lib pascomp disasm ccomp; do
-	make -C $i CFLAGS="%{rpmcflags}"
+	%{__make} -C $i \
+		CFLAGS="%{rpmcflags}"
 done
 %{__make} -C interp gui std
 
