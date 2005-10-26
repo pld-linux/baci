@@ -3,13 +3,13 @@ Summary:	BenAri Concurrent Interpreter
 Summary(pl):	Wspó³bie¿ny interpreter BACI
 Name:		baci
 Version:	1.0.%{_date}
-Release:	1
+Release:	2
 License:	Freeware
 Group:		Development/Languages
 Source0:	http://www.mines.edu/fs_home/tcamp/baci/%{name}src.tar.gz
 # Source0-md5:	14e0500bf7079a17664469ecead8bb4f
-Patch0:		%{name}-amd64.patch
-Patch1:		%{name}-%{_date}.patch
+Patch0:		%{name}-%{_date}.patch
+Patch1:		%{name}-amd64.patch
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	tk-devel
@@ -24,10 +24,10 @@ Kompilator i interpreter jêzyka BACI.
 
 %prep
 %setup -q -n %{name}src
-%if "%{_lib}" == "lib64"
 %patch0 -p1
-%endif
+%if "%{_lib}" == "lib64"
 %patch1 -p1
+%endif
 
 %build
 for i in lib disasm ccomp; do
