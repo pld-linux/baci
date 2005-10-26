@@ -1,13 +1,15 @@
+%define		_date	20051026
 Summary:	BenAri Concurrent Interpreter
 Summary(pl):	Wspó³bie¿ny interpreter BACI
 Name:		baci
-Version:	1.0
-Release:	7
+Version:	1.0.%{_date}
+Release:	1
 License:	Freeware
 Group:		Development/Languages
 Source0:	http://www.mines.edu/fs_home/tcamp/baci/%{name}src.tar.gz
 # Source0-md5:	14e0500bf7079a17664469ecead8bb4f
 Patch0:		%{name}-amd64.patch
+Patch1:		%{name}-%{_date}.patch
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	tk-devel
@@ -25,9 +27,10 @@ Kompilator i interpreter jêzyka BACI.
 %if "%{_lib}" == "lib64"
 %patch0 -p1
 %endif
+%patch1 -p1
 
 %build
-for i in lib pascomp disasm ccomp; do
+for i in lib disasm ccomp; do
 	%{__make} -C $i \
 		CFLAGS="%{rpmcflags}"
 done
@@ -37,7 +40,7 @@ done
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install ccomp/bacc disasm/badis pascomp/bapas interp/{bainterp,bagui} $RPM_BUILD_ROOT%{_bindir}
+install ccomp/bacc disasm/badis interp/{bainterp,bagui} $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
