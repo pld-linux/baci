@@ -3,7 +3,7 @@ Summary:	BenAri Concurrent Interpreter
 Summary(pl):	Wspó³bie¿ny interpreter BACI
 Name:		baci
 Version:	1.0.%{_date}
-Release:	2
+Release:	1
 License:	Freeware
 Group:		Development/Languages
 Source0:	http://www.mines.edu/fs_home/tcamp/baci/%{name}src.tar.gz
