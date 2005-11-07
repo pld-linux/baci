@@ -1,4 +1,4 @@
-%define		_date	20051026
+%define		_date	20051027
 Summary:	BenAri Concurrent Interpreter
 Summary(pl):	Wspó³bie¿ny interpreter BACI
 Name:		baci
@@ -8,8 +8,9 @@ License:	Freeware
 Group:		Development/Languages
 Source0:	http://www.mines.edu/fs_home/tcamp/baci/%{name}src.tar.gz
 # Source0-md5:	14e0500bf7079a17664469ecead8bb4f
-Patch0:		%{name}-%{_date}.patch
-Patch1:		%{name}-amd64.patch
+Patch0:		%{name}-20051026.patch
+Patch1:		%{name}-%{_date}.patch
+Patch2:		%{name}-amd64.patch
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	tk-devel
@@ -25,12 +26,13 @@ Kompilator i interpreter jêzyka BACI.
 %prep
 %setup -q -n %{name}src
 %patch0 -p1
-%if "%{_lib}" == "lib64"
 %patch1 -p1
+%if "%{_lib}" == "lib64"
+%patch2 -p1
 %endif
 
 %build
-for i in lib disasm ccomp; do
+for i in lib disasm ccomp pascomp ar ld; do
 	%{__make} -C $i \
 		CFLAGS="%{rpmcflags}"
 done
@@ -40,7 +42,8 @@ done
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install ccomp/bacc disasm/badis interp/{bainterp,bagui} $RPM_BUILD_ROOT%{_bindir}
+install ccomp/bacc disasm/badis pascomp/bapas interp/{bainterp,bagui} \
+	ar/baar ld/bald	$RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
