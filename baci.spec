@@ -1,6 +1,6 @@
 %define		_date	20051027
 Summary:	BenAri Concurrent Interpreter
-Summary(pl.UTF-8):   Współbieżny interpreter BACI
+Summary(pl.UTF-8):	Współbieżny interpreter BACI
 Name:		baci
 Version:	1.0.%{_date}
 Release:	1
