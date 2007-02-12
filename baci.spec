@@ -1,6 +1,6 @@
 %define		_date	20051027
 Summary:	BenAri Concurrent Interpreter
-Summary(pl):	Wspó³bie¿ny interpreter BACI
+Summary(pl.UTF-8):   WspÃ³Å‚bieÅ¼ny interpreter BACI
 Name:		baci
 Version:	1.0.%{_date}
 Release:	1
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 BenAri Concurrent Pascal PCODE Interpreter & Compiler.
 
-%description -l pl
-Kompilator i interpreter jêzyka BACI.
+%description -l pl.UTF-8
+Kompilator i interpreter jÄ™zyka BACI.
 
 %prep
 %setup -q -n %{name}src
